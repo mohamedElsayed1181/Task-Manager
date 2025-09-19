@@ -111,20 +111,14 @@ export default function TaskItem({
             <button
               type="button"
               onClick={() => setEditing(false)}
-              className="px-3 py-1 border rounded cursor-pointer
-                border-gray-300 dark:border-gray-600 
-                bg-gray-100 dark:bg-gray-800 
-                text-gray-800 dark:text-gray-200
-                hover:bg-gray-200 dark:hover:bg-gray-700"
+              className="btn-secondary rounded-xl px-1 py-1 cursor-pointer"
             >
               Cancel
             </button>
+
             <button
               type="submit"
-              className="px-3 py-1 rounded cursor-pointer
-                bg-primary text-white 
-                dark:bg-gray-700 dark:text-gray-100
-                hover:opacity-90"
+              className="btn-primary rounded-xl px-1 py-1 cursor-pointer"
             >
               Save
             </button>
