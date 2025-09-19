@@ -1,6 +1,5 @@
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
 
-
 export default function Header({ theme, setTheme }: any) {
   return (
     <header className="flex items-center justify-between">

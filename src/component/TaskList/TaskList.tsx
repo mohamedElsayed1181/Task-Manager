@@ -3,7 +3,6 @@ import { Droppable, Draggable } from "@hello-pangea/dnd";
 import TaskItem from "../TaskItem/TaskItem";
 import type { Todo, Category } from "../../types";
 
-
 type Props = { items: Todo[]; categories: Category[] };
 
 export default function TaskList({ items, categories }: Props) {

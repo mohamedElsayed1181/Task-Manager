@@ -39,17 +39,24 @@ export default function TaskItem({
   const cat = categories.find((c) => c.id === task.categoryId);
 
   return (
-    <div className="flex items-center justify-between bg-gray-50 dark:bg-gray-800 p-3 rounded">
+    <div
+      className="flex items-center justify-between 
+  
+      p-3 rounded shadow-sm transition-colors duration-300"
+    >
       <div className="flex items-center gap-3">
         <input
           type="checkbox"
           checked={task.completed}
           onChange={toggleComplete}
+          className="accent-primary"
         />
         <div>
           <div
             className={`font-medium ${
-              task.completed ? "line-through text-gray-400" : ""
+              task.completed
+                ? "line-through text-gray-400 dark:text-gray-500"
+                : ""
             }`}
           >
             {task.todo}
@@ -61,11 +68,20 @@ export default function TaskItem({
           )}
         </div>
       </div>
+
       <div className="flex items-center gap-2">
-        <button onClick={() => setEditing(true)} aria-label="edit">
+        <button
+          onClick={() => setEditing(true)}
+          aria-label="edit"
+          className="p-1 rounded hover:bg-gray-200 dark:hover:bg-gray-700"
+        >
           <FiEdit />
         </button>
-        <button onClick={remove} aria-label="delete" className="text-red-500">
+        <button
+          onClick={remove}
+          aria-label="delete"
+          className="p-1 text-red-500 rounded hover:bg-red-100 dark:hover:bg-red-800"
+        >
           <FiTrash2 />
         </button>
       </div>
@@ -73,14 +89,18 @@ export default function TaskItem({
       <Modal isOpen={editing} onClose={() => setEditing(false)}>
         <form onSubmit={handleSubmit(onSave)} className="space-y-3">
           <input
-            className="w-full p-2 border rounded"
+            className="w-full p-2 border rounded 
+              border-gray-300 dark:border-gray-600 
+             "
             {...register("todo", { required: true })}
           />
           <select
             {...register("categoryId")}
-            className="w-full p-2 border rounded"
+            className="w-full p-2 border rounded 
+              border-gray-300 dark:border-gray-600 
+             "
           >
-            <option value="">Without category </option>
+            <option value="">Without category</option>
             {categories.map((c) => (
               <option key={c.id} value={c.id}>
                 {c.name}
@@ -91,13 +111,20 @@ export default function TaskItem({
             <button
               type="button"
               onClick={() => setEditing(false)}
-              className="px-3 py-1 border rounded cursor-pointer"
+              className="px-3 py-1 border rounded cursor-pointer
+                border-gray-300 dark:border-gray-600 
+                bg-gray-100 dark:bg-gray-800 
+                text-gray-800 dark:text-gray-200
+                hover:bg-gray-200 dark:hover:bg-gray-700"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="px-3 py-1 bg-primary text-white rounded cursor-pointer"
+              className="px-3 py-1 rounded cursor-pointer
+                bg-primary text-white 
+                dark:bg-gray-700 dark:text-gray-100
+                hover:opacity-90"
             >
               Save
             </button>

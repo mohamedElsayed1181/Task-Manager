@@ -79,7 +79,11 @@ function Home() {
           </div>
 
           <div className="card">
-            {loading && <div><Loading /></div>}
+            {loading && (
+              <div>
+                <Loading />
+              </div>
+            )}
 
             {error && (
               <div className="text-red-500 dark:text-red-400">

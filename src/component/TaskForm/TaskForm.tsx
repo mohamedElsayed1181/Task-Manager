@@ -32,17 +32,13 @@ export default function TaskForm({ categories }: Props) {
       <input
         {...register("todo", { required: true })}
         placeholder="Add a task..."
-        className="flex-1 p-2 border rounded-2xl 
-                   bg-white text-gray-900 
-                   dark:bg-gray-800 dark:text-gray-100
-                   focus:ring-2 focus:ring-blue-500 outline-none transition"
+        className="input flex-1"
       />
 
       <select
         {...register("categoryId")}
         className="p-2 border rounded-2xl
-                   bg-white text-gray-900 
-                   dark:bg-gray-800 dark:text-gray-100
+                 
                    focus:ring-2 focus:ring-blue-500 outline-none transition"
       >
         <option value="">Without category</option>

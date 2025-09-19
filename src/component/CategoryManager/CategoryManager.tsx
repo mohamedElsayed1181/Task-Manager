@@ -19,7 +19,7 @@ export default function CategoryManager({ categories, setCategories }: any) {
   }
 
   return (
-    <div className="card">
+    <div className="card ">
       <h3 className="font-semibold mb-3">Categories</h3>
       <div className="flex gap-2">
         <input
@@ -34,7 +34,9 @@ export default function CategoryManager({ categories, setCategories }: any) {
           onChange={(e) => setColor(e.target.value)}
           className="h-10 w-10 "
         />
-        <Button className="cursor-pointer" onClick={addCategory}>Add</Button>
+        <Button className="cursor-pointer" onClick={addCategory}>
+          Add
+        </Button>
       </div>
       <ul className="mt-3 space-y-2">
         {categories.map((c: Category) => (
